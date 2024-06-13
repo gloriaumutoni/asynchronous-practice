@@ -13,13 +13,30 @@ const getTodos = (resource, callback) => {
   request.open("GET", resource);
   request.send();
 };
+// promise example
+const getSomething = () => {
+  return new Promise((resolve, reject) => {
+    // fetch getSomething
+    resolve("some data");
+    reject("some error");
+  });
+};
+getSomething().then(
+  (data) => {
+    console.log(ReferenceError());
+  },
+  (err) => {
+    console.log("error");
+  }
+);
 
-getTodos("todos/luigi.json", (err, data) => {
-  console.log(data);
-});
-getTodos("todos/mario.json", (err, data) => {
-  console.log(data);
-});
-getTodos("todos/shaun.json", (err, data) => {
-  console.log(data);
-});
+// getting data from json files
+// getTodos("todos/luigi.json", (err, data) => {
+//   console.log(data);
+//   getTodos("todos/mario.json", (err, data) => {
+//     console.log(data);
+//     getTodos("todos/shaun.json", (err, data) => {
+//       console.log(data);
+//     });
+//   });
+// });
