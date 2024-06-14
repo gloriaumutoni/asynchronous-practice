@@ -20,6 +20,14 @@ const doSomethng = (resources, callback) => {
 doSomethng("todos/mario.json")
   .then((data) => {
     console.log("promise fullfiled", data);
+    return doSomethng("todos/luigi.json");
+  })
+  .then((data) => {
+    console.log("promise fullfiled", data);
+    return doSomethng("todos/shaun.json");
+  })
+  .then((data) => {
+    console.log("promise fullfiled", data);
   })
   .catch((err) => {
     console.log("promise rejected", err);
