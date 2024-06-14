@@ -19,8 +19,3 @@ async function fetchData(url, number) {
 
 var promise = fetchData("https://jsonplaceholder.typicode.com/todos/1", 3);
 console.log(promise);
-//  .then(data => console.log(data))
-//  .catch((err) => {
-//     console.log(err.message)
-
-// })
