@@ -1,19 +1,29 @@
 const doSomethng = (resources, callback) => {
-  let request = new XMLHttpRequest();
-  request.addEventListener("readystatechange", () => {
-    if (request.readyState === 4 && request.status === 200) {
-      const data = JSON.parse(request.responseText);
-      callback(undefined, data);
-      //   console.log(request.responseText);
-    } else if (request.readyState === 4) {
-      callback("erro fired", undefined);
-      //   console.log("error occured");
-    }
+  return new Promise((resolve, rejected) => {
+    let request = new XMLHttpRequest();
+    request.addEventListener("readystatechange", () => {
+      if (request.readyState === 4 && request.status === 200) {
+        const data = JSON.parse(request.responseText);
+        resolve(data);
+        // callback(undefined, data);
+        //   console.log(request.responseText);
+      } else if (request.readyState === 4) {
+        rejected("error fired");
+        // callback("error fired", undefined);
+        //   console.log("error occured");
+      }
+    });
+    request.open("GET", resources);
+    request.send();
   });
-  request.open("GET", resources);
-  request.send();
 };
-doSomethng();
+doSomethng("todos/mario.json")
+  .then((data) => {
+    console.log("promise fullfiled", data);
+  })
+  .catch((err) => {
+    console.log("promise rejected", err);
+  });
 
 // doSomethng("todos/luigi.json", (err, data) => {
 //   console.log(data);
