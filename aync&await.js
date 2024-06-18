@@ -2,6 +2,9 @@
 
 const getTodos = async (responses) => {
   responses = await fetch("todos/luigi.json");
+  if (responses.status !== 200) {
+    throw new Error("can't get data");
+  }
   const data = await responses.json();
   return data;
 };
