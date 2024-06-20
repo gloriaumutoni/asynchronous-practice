@@ -10,8 +10,8 @@
 // });
 
 let GITHUB_USER = "https://github.com/gloriaumutoni";
-let user = fetch("https://github.com/gloriaumutoni");
+let user = fetch(GITHUB_USER);
 console.log(user);
-user.then((data) => {
+user.then(function (data) {
   console.log(data);
 });
