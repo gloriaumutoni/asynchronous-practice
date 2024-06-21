@@ -1,11 +1,11 @@
 function myFetch(url) {
   return new Promise((resolve, reject) => {
-    let request = new XMLHttpRequest(url);
-    request.addEventListener("onreadystatechange", () => {
-      if (request.status === 200 && request.readyState === 4) {
+    let request = new XMLHttpRequest();
+    request.addEventListener("readystatechange", () => {
+      if (request.readyState === 4 && request.status === 200) {
         let data = JSON.parse(request.responseText);
         resolve(data);
-      } else if (response.readyState === 4) {
+      } else if (request.readyState === 4) {
         reject("error occured");
       }
     });
@@ -13,6 +13,7 @@ function myFetch(url) {
     request.send();
   });
 }
+
 myFetch("https://my-random-api.com/data")
   .then((data) => console.log(data))
   .catch((error) => console.log("Error:", error));
