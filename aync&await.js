@@ -1,20 +1,20 @@
 // aync&await
 
-const getTodos = async (responses) => {
-  responses = await fetch("todos/luigi.json");
-  if (responses.status !== 200) {
-    throw new Error("can't get data");
-  }
-  const data = await responses.json();
-  return data;
-};
-getTodos()
-  .then((data) => {
-    console.log("resolved", data);
-  })
-  .catch((err) => {
-    console.log("rejected", err);
-  });
+// const getTodos = async (responses) => {
+//   responses = await fetch("todos/luigi.json");
+//   if (responses.status !== 200) {
+//     throw new Error("can't get data");
+//   }
+//   const data = await responses.json();
+//   return data;
+// };
+// getTodos()
+//   .then((data) => {
+//     console.log("resolved", data);
+//   })
+//   .catch((err) => {
+//     console.log("rejected", err);
+// });
 
 // fetch("todos/luigi.json")
 //   .then((response) => {
@@ -27,3 +27,7 @@ getTodos()
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+// let p= new Promise((resolve,reject)=>{
+//   resolve('promise resolved')
+// })
