@@ -28,20 +28,27 @@
 //     console.log(err);
 //   });
 
-let p1 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("first timer");
-  }, 5000);
-});
-let p2 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve("second timer");
-  }, 5000);
-});
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("first timer");
+//   }, 5000);
+// });
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("second timer");
+//   }, 5000);
+// });
+// async function handlePromise() {
+//   let v1 = await p1;
+//   console.log(v1);
+//   let v2 = await p2;
+//   console.log(v2);
+// }
+// handlePromise();
+
 async function handlePromise() {
-  let v1 = await p1;
-  console.log(v1);
-  let v2 = await p2;
-  console.log(v2);
+  let data = await fetch("https://api.github.com/users/gloriaumutoni"); //fetch returns a response object
+  let json = data.json(); //converts it into jsonValue
+  console.log(json);
 }
 handlePromise();
