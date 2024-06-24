@@ -28,11 +28,20 @@
 //     console.log(err);
 //   });
 
-let p = new Promise((resolve, reject) => {
-  resolve("promise resolved");
+let p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("first timer");
+  }, 5000);
+});
+let p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("second timer");
+  }, 5000);
 });
 async function handlePromise() {
-  let v = await p;
-  return v;
+  let v1 = await p1;
+  console.log(v1);
+  let v2 = await p2;
+  console.log(v2);
 }
-console.log(handlePromise());
+handlePromise();
