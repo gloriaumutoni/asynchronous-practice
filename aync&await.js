@@ -28,6 +28,11 @@
 //     console.log(err);
 //   });
 
-// let p= new Promise((resolve,reject)=>{
-//   resolve('promise resolved')
-// })
+let p = new Promise((resolve, reject) => {
+  resolve("promise resolved");
+});
+async function handlePromise() {
+  let v = await p;
+  return v;
+}
+console.log(handlePromise());
