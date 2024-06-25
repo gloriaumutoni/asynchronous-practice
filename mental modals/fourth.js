@@ -6,7 +6,7 @@ function myFetch(url) {
         let data = JSON.parse(request.responseText);
         resolve(data);
       } else if (request.readyState === 4) {
-        reject("error occured");
+        reject("error occured!!!!!!!");
       }
     });
     request.open("GET", url);
@@ -14,6 +14,6 @@ function myFetch(url) {
   });
 }
 
-myFetch("https://my-random-api.com/data")
+myFetch("https://api.github.com/users/gloriaumutoni")
   .then((data) => console.log(data))
   .catch((error) => console.log("Error:", error));

@@ -4,9 +4,9 @@ async function retries(url, num) {
   try {
     let data = await fetch(url); //fetch returns a response object
     let jsonValue;
-    if (data.readyState === 4 && data.status === 200) {
-      let jsonValue = await data.json();
-    } else if (data.readyState === 4) {
+    if (data.ok) {
+      jsonValue = await data.json();
+    } else {
       while (num > 0) {
         data = await fetch(url);
         console.log(num);
