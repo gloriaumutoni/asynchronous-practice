@@ -8,7 +8,7 @@ async function myfetch(countryUrl,weatherUrl){
         let countryJson
         let weatherJson
         if(countryResponse.ok){
-           countryJson=await countryResponse.json()
+           countryJson= await countryResponse.json()
         }
         else if(weatherResponse.ok){
             weatherJson=await weatherResponse.json()
@@ -16,7 +16,7 @@ async function myfetch(countryUrl,weatherUrl){
         else{
             throw new Error('not valid!!!')
         }
-            console.log(countryJson,weatherJson)
+            console.log(countryJson)
         //get country,latitude and longitude 
 
     }catch(err){
@@ -25,4 +25,4 @@ async function myfetch(countryUrl,weatherUrl){
     
 
 }
-myfetch('https://restcountries.com/v3.1/name/Rwanda',' https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true')
+myfetch('https://restcountries.com/v3.1/name/Rwanda',' https://api.open-meteo.com/v1/forecast?latitude=-2&longitude=30&current_weather=true')
