@@ -60,5 +60,5 @@ classGet.addEventListener("click", getData);
   XHR.send(JSON.stringify(data));
   console.log(data)
 
-}
+
 classSend.addEventListener("click", postData);
