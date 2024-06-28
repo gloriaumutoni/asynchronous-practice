@@ -14,51 +14,51 @@ function getData() {
 }
 classGet.addEventListener("click", getData);
 
-async function postData() {
-    try{
-        let request=await fetch("https://jsonplaceholder.typicode.com/posts",{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-        body:JSON.stringify({
-                username: "gloria",
-                email: "g@gmail.com",
-                password: "123",
-              })
-        })
+// async function postData() {
+//     try{
+//         let request=await fetch("https://jsonplaceholder.typicode.com/posts",{
+//             method:'POST',
+//             headers:{
+//                 'Content-Type':'application/json'
+//             },
+//         body:JSON.stringify({
+//                 username: "gloria",
+//                 email: "g@gmail.com",
+//                 password: "123",
+//               })
+//         })
 
-            let response;
-            if(!request.ok){
-        throw new Error('Error!!!')
-            }
-            else{
-              response=request.json()  
-            }
-    }catch(err){
-console.log('handle the',err)
-    }
-
-}
-
-//   let XHR = new XMLHttpRequest();
-//   XHR.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
-//   XHR.setRequestHeader("Content-Type", "application/json");
-//   XHR.addEventListener("onreadyStateChange", function () {
-//     if (XHR.readyState === 4) {
-//       var response = JSON.parse(this.response);
-//       console.log(response);
-//     } else {
-//       console.log("Error!! occured");
+//             let response;
+//             if(!request.ok){
+//         throw new Error('Error!!!')
+//             }
+//             else{
+//               response=request.json()  
+//             }
+//     }catch(err){
+// console.log('handle the',err)
 //     }
-//   });
-//   let data = {
-//     username: "gloria",
-//     email: "g@gmail.com",
-//     password: "123",
-//   };
-//   XHR.send(JSON.stringify(data));
-//   console.log(data)
 
 // }
+
+  let XHR = new XMLHttpRequest();
+  XHR.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+  XHR.setRequestHeader("Content-Type", "application/json");
+  XHR.addEventListener("onreadyStateChange", function () {
+    if (XHR.readyState === 4) {
+      var response = JSON.parse(this.response);
+      console.log(response);
+    } else {
+      console.log("Error!! occured");
+    }
+  });
+  let data = {
+    username: "gloria",
+    email: "g@gmail.com",
+    password: "123",
+  };
+  XHR.send(JSON.stringify(data));
+  console.log(data)
+
+}
 classSend.addEventListener("click", postData);
