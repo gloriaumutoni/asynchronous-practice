@@ -10,7 +10,7 @@ async function abortingTimer(url) {
     const { signal } = controller;
     setTimeout(() => {
       controller.abort();
-    }, 10);
+    }, 10000);
     const response = await fetch(url, { signal });
     if (!response.ok) throw new Error("couldn't fetch");
     let responseJson = response.json();
@@ -19,4 +19,4 @@ async function abortingTimer(url) {
     console.log("error:", err);
   }
 }
-abortingTimer("");
+abortingTimer("https://jsonplaceholder.typicode.com/posts");
