@@ -9,6 +9,5 @@ function repeatEvery(callback,delay){
     setInterval(()=>{
 callback()
     },delay)
-   
 }
 repeatEvery(()=>console.log('hi'),2000)
