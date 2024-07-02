@@ -21,7 +21,7 @@ performFastAsync('https://jsonplaceholder.typicode.com/todos/1', 9000)
 	console.log(data)
 })  
 
-// performFastAsync('https://jsonplaceholder.typicode.com/todos/1', 10)
-// .then((data) => {
-// 	console.log(data)
-// })
+performFastAsync('https://jsonplaceholder.typicode.com/todos/1', 10)
+.then((data) => {
+	console.log(data)
+})
