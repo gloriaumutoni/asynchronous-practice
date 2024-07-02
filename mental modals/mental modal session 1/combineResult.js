@@ -1,22 +1,11 @@
-function fetchMultipleAPIs(apiUrls) {
-  // let fetch= async(url)=>{
-  let fetch = async (url) => {
-    let fetching = await fetch(url);
-    let response = await fetching.json();
-    return response;
-  };
-  return Promise.all(apiUrls.map((url) => fetch(url)));
+async function fetchMultipleAPIs(apiUrls) {
+ try{
+  let response = apiUrls.map(url=>fetch(url).then(data=>data.json()))
+  let promise=await Promise.all(response)
+  return promise;
+ }catch{}
+ 
 }
-//   let promise1 = fetch(apiUrls[0]);
-//   let promise2 = fetch(apiUrls[1]);
-//   let promise3 = fetch(apiUrls[2]);
-//   //   let promise = [];
-//   //   apiUrls.map((url) => {
-//   //     promise.push(url);
-//   //   });
-//   //   return Promise.all(promise);
-//   return Promise.all([promise1, promise2, promise3]);
-// }
 
 const apiUrls = [
   "https://jsonplaceholder.typicode.com/posts/4",
