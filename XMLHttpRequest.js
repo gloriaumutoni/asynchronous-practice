@@ -44,7 +44,7 @@ getSomething().then(
   }
 );
 
-an alternative for then and catch
+// an alternative for then and catch
 getSomething()
   .then((data) => {
     console.log(data);
