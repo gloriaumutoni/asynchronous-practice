@@ -15,32 +15,32 @@ function getData() {
 }
 classGet.addEventListener("click", getData);
 
-// async function postData() {
-//     try{
-//         let request=await fetch("https://jsonplaceholder.typicode.com/posts",{
-//             method:'POST',
-//             headers:{
-//                 'Content-Type':'application/json'
-//             },
-//         body:JSON.stringify({
-//                 username: "gloria",
-//                 email: "g@gmail.com",
-//                 password: "123",
-//               })
-//         })
+async function postData() {
+    try{
+        let request=await fetch("https://jsonplaceholder.typicode.com/posts",{
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json'
+            },
+        body:JSON.stringify({
+                username: "gloria",
+                email: "g@gmail.com",
+                password: "123",
+              })
+        })
 
-//             let response;
-//             if(!request.ok){
-//         throw new Error('Error!!!')
-//             }
-//             else{
-//               response=request.json()  
-//             }
-//     }catch(err){
-// console.log('handle the',err)
-//     }
+            let response;
+            if(!request.ok){
+        throw new Error('Error!!!')
+            }
+            else{
+              response=request.json()  
+            }
+    }catch(err){
+console.log('handle the',err)
+    }
 
-// }
+}
 
   let XHR = new XMLHttpRequest();
   XHR.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
