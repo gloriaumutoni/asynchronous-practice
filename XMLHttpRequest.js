@@ -24,31 +24,34 @@ getTodos("todos/luigi.json")
   .then((err) => {
     console.log("promise rejected", err);
   });
-// promise example
-// const getSomething = () => {
-//   return new Promise((resolve, reject) => {
-//     // fetch getSomething
-//     resolve("some data");
-//     reject("some error");
-//   });
-// };
-// getSomething().then(
-//   (data) => {
-//     console.log(ReferenceError());
-//   },
-//   (err) => {
-//     console.log("error");
-//   }
-// );
 
-// an alternative for then and catch
-// getSomething()
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+
+// promise example
+
+const getSomething = () => {
+  return new Promise((resolve, reject) => {
+    // fetch getSomething
+    resolve("some data");
+    reject("some error");
+  });
+};
+getSomething().then(
+  (data) => {
+    console.log(ReferenceError());
+  },
+  (err) => {
+    console.log("error");
+  }
+);
+
+an alternative for then and catch
+getSomething()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // getting data from json files
 getTodos("todos/luigi.json", (err, data) => {
