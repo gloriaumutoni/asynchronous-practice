@@ -4,6 +4,7 @@
 // email: The email address of the new user.
 // password: The password for the new user.
 
+
 const classGet = document.querySelector(".get");
 const classSend = document.querySelector(".send");
 
