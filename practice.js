@@ -17,21 +17,21 @@ const doSomethng = (resources, callback) => {
     request.send();
   });
 };
-doSomethng("todos/mario.json")
-  .then((data) => {
-    console.log("promise fullfiled", data);
-    return doSomethng("todos/luigi.json");
-  })
-  .then((data) => {
-    console.log("promise fullfiled", data);
-    return doSomethng("todos/shaun.json");
-  })
-  .then((data) => {
-    console.log("promise fullfiled", data);
-  })
-  .catch((err) => {
-    console.log("promise rejected", err);
-  });
+// doSomethng("todos/mario.json")
+//   .then((data) => {
+//     console.log("promise fullfiled", data);
+//     return doSomethng("todos/luigi.json");
+//   })
+//   .then((data) => {
+//     console.log("promise fullfiled", data);
+//     return doSomethng("todos/shaun.json");
+//   })
+//   .then((data) => {
+//     console.log("promise fullfiled", data);
+//   })
+//   .catch((err) => {
+//     console.log("promise rejected", err);
+//   });
 
 
   
