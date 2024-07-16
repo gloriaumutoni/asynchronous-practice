@@ -42,24 +42,24 @@ console.log('handle the',err)
 
 }
 
-//   let XHR = new XMLHttpRequest();
-//   XHR.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
-//   XHR.setRequestHeader("Content-Type", "application/json");
-//   XHR.addEventListener("onreadyStateChange", function () {
-//     if (XHR.readyState === 4) {
-//       var response = JSON.parse(this.response);
-//       console.log(response);
-//     } else {
-//       console.log("Error!! occured");
-//     }
-//   });
-//   let data = {
-//     username: "gloria",
-//     email: "g@gmail.com",
-//     password: "123",
-//   };
-//   XHR.send(JSON.stringify(data));
-//   console.log(data)
+  let XHR = new XMLHttpRequest();
+  XHR.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+  XHR.setRequestHeader("Content-Type", "application/json");
+  XHR.addEventListener("onreadyStateChange", function () {
+    if (XHR.readyState === 4) {
+      var response = JSON.parse(this.response);
+      console.log(response);
+    } else {
+      console.log("Error!! occured");
+    }
+  });
+  let data = {
+    username: "gloria",
+    email: "g@gmail.com",
+    password: "123",
+  };
+  XHR.send(JSON.stringify(data));
+  console.log(data)
 
 
-// classSend.addEventListener("click", postData);
+classSend.addEventListener("click", postData);
