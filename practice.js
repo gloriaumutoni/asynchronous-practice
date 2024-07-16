@@ -35,18 +35,18 @@ doSomethng("todos/mario.json")
 
 
   
-doSomethng("todos/luigi.json", (err, data) => {
-  console.log(data);
-  doSomethng("todos/mario.json", (err, data) => {
-    console.log(data);
-    doSomethng("todos/shaun.json", (err, data) => {
-      console.log(data);
-    });
-  });
-  console.log("callback fired");
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(data);
-  }
-});
+// doSomethng("todos/luigi.json", (err, data) => {
+//   console.log(data);
+//   doSomethng("todos/mario.json", (err, data) => {
+//     console.log(data);
+//     doSomethng("todos/shaun.json", (err, data) => {
+//       console.log(data);
+//     });
+//   });
+//   console.log("callback fired");
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+// });
